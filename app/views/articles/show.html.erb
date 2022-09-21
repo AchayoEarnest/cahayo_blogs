@@ -10,21 +10,11 @@
                 } %></li>
 </ul>
 
-<h2Add a comment:></h2>
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
-    <p>
-        <%= form.label :commenter %><br>
-        <%= form.text_field :commenter %><br>
-    </p>
+<h2>Comments</h2>
+<%= render @article.comments %>
 
 
-    <p>
-        <%= form.label :body %><br>
-        <%= form.text_area :body %><br>
-    </p>
 
-    <p>
-        <%= form.submit %>
-    </p>
+<h2>Add a comment:</h2>
 
-<% end %>
+<%= render 'comments/form' %>
